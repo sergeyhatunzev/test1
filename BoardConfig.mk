@@ -25,8 +25,6 @@ ALLOW_MISSING_DEPENDENCIES := true
 TARGET_SUPPORTS_64_BIT_APPS := true
 
 # Оптимизация производительности и уменьшение размера
-TARGET_GLOBAL_CFLAGS += -O2 -flto -fdata-sections -ffunction-sections -fstack-protector-strong
-TARGET_GLOBAL_LDFLAGS += -Wl,--gc-sections -Wl,-O2 -Wl,--strip-all
 
 # Architecture
 TARGET_ARCH := arm64
