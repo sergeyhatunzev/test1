@@ -22,7 +22,7 @@ ALLOW_MISSING_DEPENDENCIES := true
 
 
 # Включение поддержки 64-битных приложений
-TARGET_SUPPORTS_64_BIT_APPS := true
+TARGET_SUPPORTS_64_BIT_APPS := false
 
 # Оптимизация производительности и уменьшение размера
 
