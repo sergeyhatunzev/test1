@@ -19,6 +19,15 @@ DEVICE_PATH := device/infinix/X688B
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
+
+
+# Включение поддержки 64-битных приложений
+TARGET_SUPPORTS_64_BIT_APPS := true
+
+# Оптимизация производительности и уменьшение размера
+TARGET_GLOBAL_CFLAGS += -O2 -flto -fdata-sections -ffunction-sections -fstack-protector-strong
+TARGET_GLOBAL_LDFLAGS += -Wl,--gc-sections -Wl,-O2 -Wl,--strip-all
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -44,7 +53,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x11a88000
 BOARD_KERNEL_TAGS_OFFSET := 0x07808000
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
-
+TARGET_SUPPORTS_64_BIT_APPS := 
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
